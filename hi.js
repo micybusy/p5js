@@ -17,6 +17,7 @@ function setup() {
     x += x_factor
     y += y_factor
 
+    
     if (x >= width-50 ){
         x_factor *= -1;}
     else if (x<=50)
