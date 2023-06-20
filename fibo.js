@@ -14,9 +14,6 @@ function setup() {
     start = stop
     stop+=0.1
     wh*=1.005
-    if (wh >= height){
-      noLoop()
-    }
     
 }
 
