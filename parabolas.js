@@ -12,5 +12,5 @@ function draw(){
         dec_rate=0
         factor*= -1
     }
-    
+    xyz
 }
