@@ -4,8 +4,8 @@ function setup() {
     l = 400;
     center = .5*(innerWidth-20)
     x2 = center;
-    incr = 10;
-    incr2 = 6;
+    incr = random(1, 20);
+    incr2 = random(1, 20)
     x3 = center + l;
     l2 = l;
     y3 = l + l2;
@@ -15,7 +15,7 @@ function draw(){
     //background(255)
     y2 = (l**2 - (center - x2)**2)**.5
     line(center, 0, x2, y2)
-    y3 = (l2**2 - (center - x3)**2)**.5 + l2
+    y3 = (l2**2 - (center - x3)**2)**.5 + y2
     line(x2, y2, x3, y3)
     x2 += incr;
     x3 += incr2;
@@ -23,9 +23,11 @@ function draw(){
     if (x2 > center + l || x2 < center -l){
         incr *= -1
     }
-    else if (x3 > center + l2 || x3 < center - l){
+    else if (x3 > center + l2 || x3 < center - l2){
         incr2 *= -1
     }
+
+    
 
 }
 
