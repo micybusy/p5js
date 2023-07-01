@@ -5,6 +5,7 @@ function setup() {
     y = height/2;
     hit_low_right = false
     hit_up_left = false
+    // Set random speed in both directions.
     x_factor=random(5, 40)
     y_factor=random(5, 40)
 
@@ -29,7 +30,5 @@ function setup() {
     else if (y<=50)
             {y_factor *= -1;
             }
-    console.log(x)
-    console.log(y)
     
 }
