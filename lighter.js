@@ -3,20 +3,21 @@ let y = 0;
 let width;
 let height;
 let t, sparkx, sparky, spark_vertex, draw_spark;
+let ellipse_width = 200;
+let ellipse_height = 800;
 function setup(){
     createCanvas(innerWidth-20, innerHeight-20);
     width  = innerWidth-20;
     height = innerHeight-20;
-    frameRate(30)
 }
 
 
 function draw(){
     background(0)
-    translate(width/2, height-100)
+    translate(width/2, height-150)
     flame()
     draw_spark = Math.floor(random(100))
-    draw_spark = draw_spark%5 == 0
+    draw_spark = draw_spark%13 == 0
     if (draw_spark){
     spark()
     }
@@ -39,23 +40,26 @@ function flame(){
     push();
     // Gradient: https://editor.p5js.org/jeffThompson/sketches/ta7msUszJ
     // TODO: Implement it accordingly.
-    let g = drawingContext.createLinearGradient(x,y, x+200,y+800);
+    ellipse_width = random(195, 205);
+    ellipse_height = random(795, 805)
+    let g = drawingContext.createLinearGradient(x,y, x+ellipse_width,y+ellipse_height);
     let c1 = color(225, 119, 0);
-    let c2 = color(255,255,255);
-    g.addColorStop(0,   c1.toString());
-    g.addColorStop(0.5, c2.toString());
-    g.addColorStop(1,   c1.toString());
+    let c2 = color(94,186,201);
+    let c3 = color(254, 222, 23);
+    g.addColorStop(0,   c3.toString());
+    g.addColorStop(0.1,   c1.toString());
+    g.addColorStop(0.2, c2.toString());
+    g.addColorStop(0.3,   c1.toString());
     
     drawingContext.fillStyle = g;
 
-    //fill(255, 119, 0)
     beginShape();
-    ellipse(x, y, 200, 800)
+    ellipse(x, y, ellipse_width, ellipse_height)
     endShape(CLOSE);
-    drawingContext.fillStyle = 'white';
 
     x+=random(-1, 1)
-    y+=random(-10, 10)
+    y+=random(-5, 5)
+
     pop();
 }
 
