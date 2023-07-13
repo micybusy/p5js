@@ -15,8 +15,8 @@ function draw(){
     strokeWeight(20)
     x+=increment
     for (let i = 0; i<3; i++){
-    point(x*factor, (Math.sin(x)*factor*(2**i)+height/2))
-    point(width-x*factor, (Math.sin(x)*factor*(2**i)+height/2))
+    point(x*factor, (Math.sin(x)*factor+(i*50)+height/2))
+    //point(width-x*factor, (Math.sin(x)*factor*(2**i)+height/2))
     }
 
 }
